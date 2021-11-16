@@ -1,0 +1,23 @@
+# Project Micro Lumens <microlumens.com>
+NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
+
+[DOCUMENTATION]
+ORG_NAME="Micro Lumens"
+ORG_DBA="Micro token"
+ORG_URL="https://microlumens.com/"
+ORG_LOGO = "https://microlumens.com/micro.png"
+ORG_OFFICIAL_EMAIL="hi@microlumens.com"
+ORG_SUPPORT_EMAIL="support@microlumens.com"
+ORG_TWITTER="micro_lumens"
+ORG_DESCRIPTION="Micro Lumens provides a secure and transparent star wallet service."
+
+[[CURRENCIES]]
+code = "MICRO"
+name = "Micro Lumens"
+issuer = "GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ"
+is_asset_anchored = false
+display_decimals = 3
+fixed_number=200000000
+desc="$MICRO Token was issued by Micro Lumens Wallet."
+image="https://microlumens.com/micro.png"
+conditions="There will only ever be 200M MICRO tokens in existence."
