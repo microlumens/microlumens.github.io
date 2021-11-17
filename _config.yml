@@ -1,1 +1,3 @@
 include: [".well-known"]
+github:
+   default-mime-type: text/html
