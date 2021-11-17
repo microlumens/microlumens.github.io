@@ -1,3 +1,5 @@
-include: [".well-known/stellar.toml"]
-
+include: [".well-known"]
+safe                : false
+markdown_ext        : "markdown,mkdown,mkdn,mkd,md,toml"
+strict_front_matter : false
 
