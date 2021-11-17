@@ -1,5 +1,5 @@
 include: [".well-known"]
 safe                : true
 markdown_ext        : "markdown,mkdown,mkdn,mkd,md,toml"
-strict_front_matter : false
+strict_front_matter : true
 
