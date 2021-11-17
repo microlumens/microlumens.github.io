@@ -1,4 +1,3 @@
-include: [".well-known"]
-github:
-   default-mime-type: text/html
-   keep_files          : [".toml", ".svn"]
+include: [".well-known","stellar.toml"]
+
+
