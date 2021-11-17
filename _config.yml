@@ -1,5 +1,2 @@
-include: [".well-known"]
-safe                : true
-markdown_ext        : "markdown,mkdown,mkdn,mkd,md,toml"
-strict_front_matter : true
-
+layout: none
+permalink: .well-known/stellar.toml
