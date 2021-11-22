@@ -9,6 +9,7 @@ ORG_LOGO = "https://microlumens.com/micro.png"
 ORG_OFFICIAL_EMAIL="hi@microlumens.com"
 ORG_SUPPORT_EMAIL="support@microlumens.com"
 ORG_TWITTER="MicroLumens"
+ORG_KEYBASE="microlumens"
 ORG_DESCRIPTION="Micro Lumens provides a secure and transparent stellar wallet service."
 
 [[CURRENCIES]]
@@ -17,7 +18,9 @@ name = "Micro Lumens"
 issuer = "GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ"
 is_asset_anchored = false
 display_decimals = 3
+status="live"
 fixed_number=200000000
+is_unlimited=false
 desc="$MICRO Token was issued by Micro Lumens Wallet."
 image="https://microlumens.com/micro.png"
 conditions="There will only ever be 200M MICRO tokens in existence."
