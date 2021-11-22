@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/microlumens
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://microlumens.com
+  * I am microlumens (https://keybase.io/microlumens) on keybase.
+  * I have a public key ASB2wQkm8huQmTsMQWjXZ2JCI4TiVMioOWUH901pLBQl9Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012076c10926f21b90993b0c4168d76762422384e254c8a8396507f74d692c1425f40a",
+      "host": "keybase.io",
+      "kid": "012076c10926f21b90993b0c4168d76762422384e254c8a8396507f74d692c1425f40a",
+      "uid": "d3f789a08aa95899fb8c98498f17a119",
+      "username": "microlumens"
+    },
+    "merkle_root": {
+      "ctime": 1637591946,
+      "hash": "3aa178f07919be9a9ce238c48e174a2f9cc22f5357f30267b3c82c5b537718bb275015c74bea721a72a10b714d4bd0f1c5fcc497d7524bd0ed4c549253073186",
+      "hash_meta": "230386317d154c0fe3ab3b34584d56f6709f9ae030ecd5bcc6237c29909fd427",
+      "seqno": 21277964
+    },
+    "service": {
+      "entropy": "enzEm1QktVpY4X9aRmkBZsBm",
+      "hostname": "microlumens.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.8.0"
+  },
+  "ctime": 1637591996,
+  "expire_in": 504576000,
+  "prev": "17f53bd116db6ccdab9bbebeb57c026ce7e1276c9ba3bfde9186d88ca08dd7b5",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgdsEJJvIbkJk7DEFo12diQiOE4lTIqDllB/dNaSwUJfQKp3BheWxvYWTESpcCCMQgF/U70RbbbM2rm76+tXwCbOfhJ2ybo7/ekYbYjKCN17XEIEz7qAXsPqaPwAkGZXWwcwXkflGqGsW8Q+Kp3SwjWo3lAgHCo3NpZ8RA2o+PjMG5vxn3S+pdqSPzkp4DlR2XbwphgGu4hlqq+UWFoB6OC3FFfic9mqsca9StqFTmjRLTGMw4tjHUC5aVCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIO+ex5qCfitFywnuMAM9ST4Y5+DDZ8XeM0kw6y8cpS8Uo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/microlumens
+
+==================================================================
