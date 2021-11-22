@@ -8,7 +8,7 @@ ORG_URL="https://microlumens.com/"
 ORG_LOGO = "https://microlumens.com/micro.png"
 ORG_OFFICIAL_EMAIL="hi@microlumens.com"
 ORG_SUPPORT_EMAIL="support@microlumens.com"
-ORG_TWITTER="micro_lumens"
+ORG_TWITTER="MicroLumens"
 ORG_DESCRIPTION="Micro Lumens provides a secure and transparent stellar wallet service."
 
 [[CURRENCIES]]
