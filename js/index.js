@@ -422,7 +422,7 @@ let renderLoggedInPage = (secretSeed) => {
 
 
 
-                document.getElementById('transactions').innerHTML += `<tr><td><a style="color:#00D1B2;" href="${isExplorer}txns/${key.hash}" target="_blank"> ${_date}</a></td><td> ${statustx}</td></tr>`
+                document.getElementById('transactions').innerHTML += `<tr><td><a style="color:#00D1B2;" href="${isExplorer}tx/${key.hash}" target="_blank"> ${_date}</a></td><td> ${statustx}</td></tr>`
 
             })
 
@@ -644,7 +644,7 @@ let sendXLM = (keyPair) => {
         let _time2 = result.created_at.match(/\d\d:\d\d/);
         var _date2 = getDate2[1] + '/' + getDate2[2] + '/' + getDate2[0] + ' - [' + _time2[0] + '] ';
         document.getElementById('payment-error').innerHTML = `<div class="notification is-success is-light">Transaction has been successful</div>`
-        document.getElementById('transactions').innerHTML += `<tr><td><a style="color:#00D1B2;" href="${isExplorer}txns/${result.hash}" target="_blank"> ${_date2}</a></td><td> ${statustx2}</td></tr>`
+        document.getElementById('transactions').innerHTML += `<tr><td><a style="color:#00D1B2;" href="${isExplorer}tx/${result.hash}" target="_blank"> ${_date2}</a></td><td> ${statustx2}</td></tr>`
         document.getElementById('payment-button').disabled = false
         getBalance(keyPair.publicKey())
     }).catch(err => {
@@ -714,11 +714,11 @@ function slchain() {
 if (localStorage.getItem('chainrpc') === "https://horizon-testnet.stellar.org/") {
     document.getElementById("switchNetwork").selectedIndex = "1"
     isServer = localStorage.getItem('chainrpc')
-    isExplorer = "https://testnet.lumenscan.io/"
+    isExplorer = "https://stellar.expert/explorer/testnet/"
     stellar.Network.useTestNetwork()
 } else {
     isServer = "https://horizon.stellar.org"
-    isExplorer = "https://lumenscan.io/"
+    isExplorer = "https://stellar.expert/explorer/public/"
     stellar.Network.usePublicNetwork()
 }
 console.log(localStorage.getItem('chainrpc'))
