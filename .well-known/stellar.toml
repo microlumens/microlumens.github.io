@@ -21,6 +21,6 @@ display_decimals = 3
 status="live"
 fixed_number=200000000
 is_unlimited=false
-desc="MICRO Token was issued by Micro Lumens Wallet. Airdrops for holders get 15x multiplier."
+desc=" Airdrops for holders get 15x multiplier. MICRO Token was issued by Micro Lumens Wallet."
 image="https://microlumens.com/micro.png"
 conditions="There will only ever be 200M MICRO tokens in existence."
