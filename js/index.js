@@ -301,7 +301,7 @@ let loggedInPage = (key, number) => `
             </tbody>
             </table>
 
-            <a class="button is-danger is-light is-small" href="${isExplorer}account/${key.publicKey()}">${language.mexp}</a>
+            <a class="button is-danger is-light is-small" href="${isExplorer}account/${key.publicKey()}" target="_blank">${language.mexp}</a>
             
         </div>
     </section>  
@@ -491,7 +491,7 @@ let newwallet = () => {
         document.getElementById('new').innerHTML = `<div class="notification is-info is-light">${language.procwallet}</div>`
         document.getElementById("unlocking").disabled = true;
         setTimeout(() => {
-            document.getElementById('new').innerHTML = `<div class="notification is-light">
+            document.getElementById('new').innerHTML = `<div class="notification is-primary">
         </button>
 
         <strong>${language.lgenkey}</strong>        <div class="field is-horizontal">
