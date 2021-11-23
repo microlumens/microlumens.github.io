@@ -491,7 +491,7 @@ let newwallet = () => {
         document.getElementById('new').innerHTML = `<div class="notification is-prymary is-light">${language.procwallet}</div>`
         document.getElementById("unlocking").disabled = true;
         setTimeout(() => {
-            document.getElementById('new').innerHTML = `<div class="notification is-primary is-light">
+            document.getElementById('new').innerHTML = `<div class="notification is-light">
         </button>
 
         <strong>${language.lgenkey}</strong>        <div class="field is-horizontal">
