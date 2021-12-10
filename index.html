@@ -6,60 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Primary Meta Tags -->
-<title>MICROLUMENS - Wallet for Stellar Assets</title>
-<meta name="title" content="MICROLUMENS - Wallet for Stellar Assets">
-<meta name="description" content="">
-    
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-<link rel="manifest" href="/img/site.webmanifest">
-<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <title>Microlumens - Wallet for Stellar Assets</title>
+    <meta name="title" content="MICROLUMENS - Wallet for Stellar Assets">
+    <meta name="description" content="">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://microlumens.com/">
-<meta property="og:title" content="MICROLUMENS - Wallet for Stellar Assets">
-<meta property="og:description" content="Micro Lumens provides a secure and transparent stellar wallet service.">
-<meta property="og:image" content="https://microlumens.com/micro.png">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://microlumens.com/">
-<meta property="twitter:title" content="MICROLUMENS - Wallet for Stellar Assets">
-<meta property="twitter:description" content="Micro Lumens provides a secure and transparent stellar wallet service.">
-<meta property="twitter:image" content="">
-    <link href="http://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="194x194" href="img/favicon-194x194.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png?v=2">
+    <link rel="manifest" href="img/site.webmanifest?v=2">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg?v=2" color="#5bd3d5">
+    <link rel="shortcut icon" href="img/favicon.ico?v=2">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://microlumens.com/">
+    <meta property="og:title" content="Wallet for Stellar Assets">
+    <meta property="og:description" content="Micro Lumens provides a secure and transparent stellar wallet service.">
+    <meta property="og:image" content="https://microlumens.com/micro.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://microlumens.com/">
+    <meta property="twitter:title" content="Wallet for Stellar Assets">
+    <meta property="twitter:description" content="Micro Lumens provides a secure and transparent stellar wallet service.">
+    <meta property="twitter:image" content="">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/0.8.0/stellar-sdk.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+    @import url("https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.0/dist/css/bulma-extensions.min.css");
     html {
         background-color: #eeeeee70;
     }
     
     body {
         font-family: 'Inter', sans-serif;
+        background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1146%26quot%3b)' fill='none'%3e%3cpath d='M1482.111%2c688.115C1533.303%2c687.975%2c1583.361%2c670.35%2c1612.206%2c628.058C1645.298%2c579.54%2c1664.446%2c515.481%2c1634.183%2c465.149C1604.507%2c415.793%2c1539.701%2c411.726%2c1482.111%2c411.689C1424.43%2c411.652%2c1359.557%2c415.601%2c1329.7%2c464.953C1299.155%2c515.442%2c1317.501%2c580.043%2c1350.781%2c628.772C1379.819%2c671.29%2c1430.623%2c688.256%2c1482.111%2c688.115' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M922.142%2c624.545C972.649%2c624.292%2c1004.663%2c577.185%2c1030.569%2c533.827C1057.46%2c488.821%2c1086.262%2c436.956%2c1061.992%2c390.484C1036.537%2c341.744%2c976.984%2c322.215%2c922.142%2c326.212C873.603%2c329.75%2c836.388%2c365.558%2c813.644%2c408.585C792.548%2c448.493%2c791.552%2c494.585%2c811.817%2c534.922C834.614%2c580.299%2c871.361%2c624.799%2c922.142%2c624.545' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M691.979%2c61.928C711.576%2c63.227%2c730.845%2c52.705%2c740.124%2c35.395C748.984%2c18.867%2c744.223%2c-0.93%2c734.159%2c-16.754C724.897%2c-31.317%2c709.236%2c-40.025%2c691.979%2c-40.306C674.183%2c-40.596%2c655.885%2c-33.786%2c647.352%2c-18.167C639.085%2c-3.035%2c645.354%2c14.609%2c653.747%2c29.672C662.445%2c45.283%2c674.147%2c60.746%2c691.979%2c61.928' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M244.669%2c697.17C289.174%2c700.991%2c339.445%2c700.209%2c365.125%2c663.66C393.858%2c622.766%2c391.902%2c566.817%2c366.502%2c523.774C341.494%2c481.395%2c293.87%2c458.749%2c244.669%2c459.533C196.852%2c460.295%2c150.061%2c484.432%2c129.379%2c527.552C110.694%2c566.509%2c131.109%2c609.922%2c155.397%2c645.655C176.097%2c676.109%2c207.981%2c694.02%2c244.669%2c697.17' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M464.289%2c412.192C515.706%2c412.447%2c570.219%2c400.351%2c596.974%2c356.443C624.613%2c311.085%2c614.542%2c254.414%2c588.711%2c208.003C562.035%2c160.075%2c519.128%2c119.268%2c464.289%2c118.052C407.651%2c116.796%2c357.231%2c152.626%2c329.925%2c202.263C303.592%2c250.133%2c304.415%2c309.119%2c333.868%2c355.136C361.285%2c397.972%2c413.431%2c411.939%2c464.289%2c412.192' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M105.412%2c369.162C149.296%2c372.092%2c190.906%2c346.139%2c211.986%2c307.538C232.283%2c270.371%2c225.343%2c225.658%2c203.632%2c189.299C182.527%2c153.956%2c146.522%2c126.932%2c105.412%2c129.062C67.03%2c131.051%2c40.823%2c164.399%2c23.368%2c198.64C7.763%2c229.251%2c6.034%2c263.82%2c20.931%2c294.782C38.366%2c331.019%2c65.288%2c366.483%2c105.412%2c369.162' fill='rgba(28%2c 142%2c 120%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1146'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
     }
     
     table {
-        border-collapse: collapse;
-        box-shadow: 0 5px 10px #e1e5ee;
         background-color: white;
         text-align: left;
         overflow: hidden;
         width: 100%;
-    }
-    
-    table thead {
-        box-shadow: 0 5px 10px #e1e5ee;
     }
     
     table th {
@@ -114,77 +122,10 @@
         margin-right: 10px;
     }
     
-    .share-button {
-        width: 100%;
-        height: 40px;
-        background: #dfe6e9;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        transition: 0.3s linear;
-    }
-    
-    .share-button:hover {
-        transform: scale(1.1);
-    }
-    
-    .share-button span {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: hsl(348, 100%, 61%);
-        color: #f1f1f1;
-        text-align: center;
-        line-height: 40px;
-        z-index: 999;
-        transition: 0.6s linear;
-        border-radius: 10px;
-    }
-    
-    .share-button:hover span {
-        transform: translateX(-100%);
-        transition-delay: 0.3s;
-    }
-    
-    .share-button a {
-        flex: 1;
-        font-size: 20px;
-        color: #2d3436;
-        text-align: center;
-        transform: translateX(-100%);
-        opacity: 0;
-        transition: 0.3s linear;
-    }
-    
-    .share-button:hover a {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
-    .share-button a:nth-of-type(1) {
-        transition-delay: 1s;
-    }
-    
-    .share-button a:nth-of-type(2) {
-        transition-delay: 0.8s;
-    }
-    
-    .share-button a:nth-of-type(3) {
-        transition-delay: 0.6s;
-    }
-    
-    .share-button a:nth-of-type(4) {
-        transition-delay: 0.4s;
-    }
-    
     .notic {
         width: 100%;
         padding: 6px;
-        background-color: hsl(348, 100%, 61%);
+        background-image: linear-gradient(to right bottom, #177899, #008da9, #00a3b4, #00b8b9, #12cdba);
         color: white;
         font-size: 11px;
         -webkit-box-pack: justify;
@@ -193,9 +134,45 @@
         align-items: center;
         display: flex;
     }
+    
+    @media screen and (max-width: 1024px) {
+        .navbar-dropdown .is-active {
+            display: block;
+        }
+        .navbar-dropdown:not(.is-active) {
+            display: none;
+        }
+        .navbar-menu {
+            border-radius: 1rem;
+        }
+    }
+    
+    .navbar-item:hover {
+        color: #177899!important;
+    }
+    
+    .navbar-link:hover {
+        color: #177899!important;
+    }
+    
+    .navbar-link:not(.is-arrowless)::after {
+        border-color: hsl(348, 100%, 61%);
+        margin-top: -0.375em;
+        right: 1.125em;
+    }
+    
+    .navbar-burger {
+        color: #177899!important;
+    }
+    
+    .navbar-burger span {
+        height: 2px;
+        width: 18px;
+    }
 </style>
 
-<body>
+<body onload="login('logg')" style="">
+    <div id="loaders" class="pageloader is-bottom-to-top has-background-success is-active"><span class="title">Decentralized and Encrypted Wallet</span></div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <div id="notice" class="notic" style="z-index: -9999;">
         <div style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>            <label id="pnotice"></label> <b style="padding: 0px 4px; display: inline; font-weight: bold;">microlumens.com</b></div><svg onclick="notice()" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -217,21 +194,21 @@
 
             <div class="navbar-start ">
                 <a class="navbar-item" href="https://docs.microlumens.com/asset-identity" target="_blank">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+                    <i class="bi bi-info-square-fill"></i>&nbsp;
                     <label id="labout"></label>
                 </a>
                 <a class="navbar-item" href="https://docs.microlumens.com/" target="_blank">
-                    <i class="fa fa-book" aria-hidden="true"></i>&nbsp;<label id="ldocs"></label>
+                    <i class="bi bi-file-text-fill"></i>&nbsp;<label id="ldocs"></label>
                 </a>
                 <a class="navbar-item" href="https://t.me/MicroLumens" target="_blank">
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;<label id="ldiscord"></label>
+                    <i class="bi bi-telegram"></i>&nbsp;<label id="ldiscord"></label>
                 </a>
                 <a class="navbar-item" href="https://github.com/microlumens/microlumens.github.io" target="_blank">
-                    <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<label id="lcode"></label>
+                    <i class="bi bi-file-code-fill"></i>&nbsp;<label id="lcode"></label>
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;<label id="llang"></label>
+                        <i class="bi bi-translate"></i>&nbsp;<label id="llang"></label>
                     </a>
 
                     <div class="navbar-dropdown">
@@ -272,9 +249,9 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="is-primary button" onclick="document.getElementById('trustmodal').classList.add('is-active');">
+                            <a class="is-danger button is-rounded" onclick="document.getElementById('trustmodal').classList.add('is-active');">
                                 <span class="icon">
-                      <i class="fa fa-gift"></i>
+                                    <i class="bi bi-megaphone-fill"></i>
                     </span>
                                 <span id="lairdrop">
                     </span>
@@ -298,12 +275,12 @@
                     </select>
             </div>
             <span class="icon is-small is-left">
-          <i class="fa fa-chain"></i>
+                <i class="bi bi-link"></i>
         </span>
         </div>
     </div>
 
-    <div id="app" style="margin-top: 1rem" onload="getLanguage()">
+    <div id="app" style="margin-top: 1rem;padding: 1rem;" onload="getLanguage()">
 
     </div>
 
@@ -326,12 +303,12 @@
                         <h4 class="mb-5" id="tairdrop"></h4>
                         <div class="field">
                             <p class="control">
-                                <input id="joindrop" class="input is-primary" type="text" placeholder="Stellar Address...">
+                                <input id="joindrop" class="input is-warning is-small is-fullwidth" type="text" placeholder="Stellar Address...">
                             </p>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <button id="dropsclick" class="button is-primary">Check</button>
+                                <button id="dropsclick" class="button is-link is-small is-fullwidth"><i class="bi bi-search"></i>&nbsp;Check</button>
                             </div>
                         </div>
                         <div id="drops" class="mb-2">
@@ -343,15 +320,7 @@
 
                             </div>
                         </article>
-                        <div class="p-3 mb-2" style="margin-top: -1rem;">
-                            <div class="share-button">
-                                <span><i class="fa fa-share-alt"></i> Share!</span>
-                                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp"></i></a>
-                            </div>
-                        </div>
+
 
 
 
@@ -361,85 +330,42 @@
         </div>
     </div>
 
-    <div class="modal" id="tradeshow">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="card m-6">
-                <div class="card-content">
-                    <div class="content ">
-                        <button class="modal-close is-large" aria-label="close" onclick="tradeclose()"></button>
-                        <center>
-                            <h4 class="mb-5"><label id="tmodaltitle"></label></h4>
-                            <article class="message is-success">
-                                <div class="message-body" style="text-align: left;" id="tmodalconent">
 
-                                </div>
-                            </article>
 
-                            <div class="columns is-centered">
-                                <div class="column ">
-                                    <a href="https://lobstr.co/" target="_blank" class="button is-success"><svg width="77" height="16" viewBox="0 0 77 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M71.4169 10.695L73.2174 15.58H76.9961L74.948 10.2717L75.3375 10.0092C76.419 9.27998 76.944 7.9912 76.944 6.07065C76.944 1.33828 74.8456 1.33828 72.4155 1.33828H65.6565V15.58H69.2282V10.695H71.4169ZM73.2751 6.22277C73.2751 4.60768 72.2018 4.55199 71.6846 4.55007L69.1303 4.55V7.89554H71.6313C72.1238 7.89554 73.2751 7.89554 73.2751 6.22277Z" fill="currentColor"></path>
-                                    <path d="M51.3507 1.93312C50.3965 1.52741 48.4621 1.07062 46.494 1.07062C42.9349 1.07062 41.348 2.45375 41.348 5.5555C41.348 8.95929 43.2519 9.49619 45.0093 9.71212L45.2426 9.73923L45.4731 9.76388L45.5869 9.77571C46.0829 9.82676 46.5122 9.87094 46.8508 9.98407C47.6713 10.2545 47.7939 10.8756 47.7939 11.2221C47.7939 11.6232 47.6079 12.2965 46.3638 12.2965C45.6456 12.2965 43.6287 12.0927 42.3125 11.6969L41.0749 14.6988C42.0865 15.1115 44.2952 15.664 46.4725 15.664C50.0433 15.664 51.7057 14.2327 51.7057 11.1583C51.7057 7.58035 49.4331 7.06854 47.5472 6.85491L47.3087 6.82904C47.2301 6.82082 47.1523 6.81292 47.0757 6.80513C46.6643 6.76334 46.3092 6.72678 46.01 6.65132C45.2098 6.42496 45.0419 5.91884 45.0419 5.53402C45.0419 5.12773 45.2307 4.60884 46.1361 4.4469C46.3528 4.41034 46.6137 4.39176 46.9136 4.39176C47.8479 4.39176 49.2408 4.58388 50.2833 4.91414L51.3507 1.93312Z" fill="currentColor"></path>
-                                    <path d="M63.9966 4.72375V1.33828H53.3657V4.72375H56.8537V15.58H60.5085V4.72375H63.9966Z" fill="currentColor"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.4481 15.5759H34.2374L34.8475 15.58C36.894 15.58 38.7877 15.1353 38.7877 11.9097C38.7877 10.85 38.5079 9.4916 37.1772 9.03743L36.3188 8.59737L37.002 7.95599C37.9138 7.21665 38.3568 6.25315 38.3568 5.00918C38.3568 3.45421 37.9178 2.4291 37.0152 1.87577C36.2431 1.40224 35.2687 1.33828 34.4172 1.33828L33.807 1.34297H27.4481V15.5759ZM33.1996 7.02694L30.9216 7.02635V4.55072L33.1985 4.55014C33.5966 4.55014 34.6543 4.55014 34.6543 5.78824C34.6543 6.42608 34.3533 6.72475 34.1011 6.86323C33.8241 7.01403 33.5168 7.02694 33.1996 7.02694ZM34.6546 11.41C34.6546 10.1708 33.5964 10.1708 33.1976 10.1708L30.9219 10.1713V12.6476L33.1976 12.6481C33.5154 12.6481 33.8233 12.6358 34.0996 12.485C34.353 12.3465 34.6546 12.0485 34.6546 11.41Z" fill="currentColor"></path>
-                                    <path d="M16.7376 4.05255C17.4857 2.4467 18.8271 0.975786 19.8035 0C15.4972 1.15125 11.6838 6.65272 11.6838 9.99761C11.6838 13.5319 14.4891 16 18.5049 16C22.5214 16 25.3267 13.5319 25.3267 9.99761C25.3267 7.33258 23.8551 4.49499 21.9111 3.1949C21.7697 4.96232 20.8949 6.92722 19.5294 8.44504C19.391 8.5985 19.2478 8.74791 19.0999 8.89211C18.884 9.10232 18.6569 9.30211 18.4257 9.48568C17.8055 9.97618 17.1425 10.3595 16.4554 10.6254L15.8187 10.8715L15.6691 10.2125C15.5764 9.80419 15.6767 6.329 16.7376 4.05255Z" fill="currentColor"></path>
-                                    <path d="M4.60406 12.194V1.33828H0.996094V15.58H9.32361V12.194H4.60406Z" fill="currentColor"></path>
-                                    </svg></a>
-                                </div>
-                                <div class="column ">
+    <script src="https://cdn.jsdelivr.net/npm/secure-ls"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js" type="text/javascript"></SCript>
+    <script src="js/index.js?upt=1017"></script>
+    <script type="text/javascript" src="toml.js"></script>
+    <script>
+        setTimeout(function() {
+            document.getElementById("loaders").classList.remove("is-active");
+        }, 3000);
 
-                                    <a href="https://stellarterm.com/exchange/MICRO-GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ/XLM-native" target="_blank" class="button is-link"><svg width="102" height="15" viewBox="0 0 102 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.05471 10.8379C7.05471 10.3984 6.88623 10.0412 6.54927 9.76648C6.22634 9.49176 5.81216 9.2445 5.30671 9.02472C4.8153 8.79121 4.27475 8.55769 3.68507 8.32418C3.10942 8.07692 2.56887 7.78159 2.06342 7.43819C1.57201 7.08104 1.15783 6.64148 0.820864 6.1195C0.497939 5.59753 0.336477 4.93132 0.336477 4.12088C0.336477 3.42033 0.455818 2.81593 0.694502 2.30769C0.933185 1.78571 1.27015 1.35302 1.7054 1.00962C2.15468 0.666209 2.68119 0.412088 3.28492 0.247253C3.88865 0.0824177 4.56258 0 5.30671 0C6.16316 0 6.97047 0.0755497 7.72864 0.226649C8.48682 0.364012 9.1116 0.570055 9.60301 0.84478L8.69742 3.21429C8.38853 3.02198 7.92521 2.85027 7.30744 2.69918C6.68967 2.53434 6.02276 2.45192 5.30671 2.45192C4.63278 2.45192 4.11329 2.58242 3.74825 2.84341C3.39724 3.1044 3.22174 3.45467 3.22174 3.89423C3.22174 4.30632 3.3832 4.64972 3.70613 4.92445C4.04309 5.19918 4.45728 5.4533 4.94868 5.68681C5.45413 5.92033 5.99468 6.16071 6.57033 6.40797C7.16002 6.65522 7.70056 6.95742 8.19197 7.31456C8.69742 7.65797 9.1116 8.09066 9.43453 8.61264C9.77149 9.12088 9.93998 9.75961 9.93998 10.5288C9.93998 11.2981 9.80659 11.9643 9.53983 12.5275C9.28711 13.0769 8.92206 13.5371 8.4447 13.908C7.98137 14.2788 7.41274 14.5536 6.73881 14.7321C6.07892 14.9107 5.34883 15 4.54854 15C3.49552 15 2.56887 14.9038 1.76858 14.7115C0.968286 14.5192 0.378597 14.3269 -0.000488281 14.1346L0.926165 11.7239C1.08061 11.8063 1.27717 11.8956 1.51585 11.9918C1.76858 12.0879 2.04938 12.1772 2.35827 12.2596C2.66715 12.342 2.99008 12.4107 3.32704 12.4657C3.67805 12.5206 4.03607 12.5481 4.40112 12.5481C5.25757 12.5481 5.91044 12.4107 6.35972 12.136C6.82305 11.8475 7.05471 11.4148 7.05471 10.8379Z" fill="currentColor"></path>
-                                    <path d="M10.7039 4.40934H12.1571V2.47253L14.8949 1.71016V4.40934H17.4643V6.67582H14.8949V10.6319C14.8949 11.3462 14.9651 11.8613 15.1055 12.1772C15.26 12.4794 15.5408 12.6305 15.9479 12.6305C16.2287 12.6305 16.4674 12.603 16.664 12.5481C16.8746 12.4931 17.1062 12.4107 17.359 12.3008L17.8433 14.3613C17.4643 14.5398 17.022 14.6909 16.5166 14.8146C16.0111 14.9382 15.4986 15 14.9791 15C14.0104 15 13.2943 14.7596 12.831 14.2788C12.3817 13.7843 12.1571 12.9808 12.1571 11.8681V6.67582H10.7039V4.40934Z" fill="currentColor"></path>
-                                    <path d="M27.4626 13.8255C27.0414 14.1552 26.4658 14.4368 25.7357 14.6703C25.0196 14.8901 24.2545 15 23.4401 15C21.7413 15 20.4987 14.5192 19.7125 13.5577C18.9262 12.5824 18.5331 11.25 18.5331 9.56044C18.5331 7.74725 18.9753 6.38736 19.8599 5.48077C20.7444 4.57418 21.987 4.12088 23.5875 4.12088C24.1211 4.12088 24.6406 4.18956 25.146 4.32692C25.6515 4.46429 26.1007 4.69093 26.4939 5.00687C26.887 5.3228 27.2029 5.74863 27.4416 6.28434C27.6803 6.82005 27.7996 7.48626 27.7996 8.28297C27.7996 8.57143 27.7786 8.88049 27.7364 9.21016C27.7084 9.53983 27.6592 9.88324 27.589 10.2404H21.2709C21.313 11.1058 21.5377 11.7582 21.9448 12.1978C22.3661 12.6374 23.04 12.8571 23.9666 12.8571C24.5423 12.8571 25.0548 12.7747 25.504 12.6099C25.9674 12.4313 26.3184 12.2527 26.5571 12.0742L27.4626 13.8255ZM23.5454 6.26374C22.8294 6.26374 22.2959 6.47665 21.9448 6.90247C21.6079 7.31456 21.4043 7.87088 21.3341 8.57143H25.2513C25.3075 7.82967 25.1881 7.25961 24.8933 6.86126C24.6125 6.46291 24.1632 6.26374 23.5454 6.26374Z" fill="currentColor"></path>
-                                    <path d="M32.5553 11.25C32.5553 11.7308 32.6185 12.081 32.7448 12.3008C32.8712 12.5206 33.0748 12.6305 33.3556 12.6305C33.5241 12.6305 33.6855 12.6168 33.84 12.5893C34.0085 12.5618 34.212 12.5 34.4507 12.4038L34.7456 14.5055C34.5209 14.6154 34.1769 14.7253 33.7136 14.8352C33.2503 14.9451 32.7729 15 32.2815 15C31.4812 15 30.8705 14.8214 30.4493 14.4643C30.0281 14.0934 29.8175 13.489 29.8175 12.6511V0.288461H32.5553V11.25Z" fill="currentColor"></path>
-                                    <path d="M38.7459 11.25C38.7459 11.7308 38.8091 12.081 38.9354 12.3008C39.0618 12.5206 39.2654 12.6305 39.5462 12.6305C39.7146 12.6305 39.8761 12.6168 40.0305 12.5893C40.199 12.5618 40.4026 12.5 40.6413 12.4038L40.9361 14.5055C40.7115 14.6154 40.3675 14.7253 39.9042 14.8352C39.4409 14.9451 38.9635 15 38.4721 15C37.6718 15 37.061 14.8214 36.6398 14.4643C36.2186 14.0934 36.008 13.489 36.008 12.6511V0.288461H38.7459V11.25Z" fill="currentColor"></path>
-                                    <path d="M42.0512 5.00687C42.6128 4.75962 43.2797 4.56731 44.0519 4.42994C44.8241 4.27885 45.6314 4.2033 46.4739 4.2033C47.2039 4.2033 47.8147 4.29258 48.3061 4.47115C48.7975 4.63599 49.1836 4.87637 49.4644 5.19231C49.7593 5.50824 49.9628 5.88599 50.0752 6.32555C50.2015 6.76511 50.2647 7.25961 50.2647 7.80907C50.2647 8.41346 50.2436 9.02472 50.2015 9.64286C50.1594 10.2473 50.1313 10.8448 50.1173 11.4354C50.1173 12.0261 50.1383 12.603 50.1805 13.1662C50.2226 13.7157 50.3279 14.2376 50.4964 14.7321H48.264L47.8217 13.3104H47.7164C47.4356 13.7363 47.0425 14.1071 46.537 14.4231C46.0456 14.7253 45.4068 14.8764 44.6205 14.8764C44.1291 14.8764 43.6869 14.8077 43.2937 14.6703C42.9006 14.5192 42.5637 14.3132 42.2829 14.0522C42.002 13.7775 41.7844 13.4615 41.63 13.1044C41.4755 12.7335 41.3983 12.3214 41.3983 11.8681C41.3983 11.2363 41.5387 10.7074 41.8195 10.2816C42.1144 9.84203 42.5286 9.49176 43.0621 9.23077C43.6096 8.95604 44.2555 8.7706 44.9996 8.67445C45.7578 8.56456 46.6002 8.53022 47.5269 8.57143C47.6251 7.8022 47.569 7.25275 47.3584 6.92308C47.1478 6.57967 46.6774 6.40797 45.9473 6.40797C45.3998 6.40797 44.8171 6.46291 44.1993 6.5728C43.5956 6.68269 43.0972 6.82692 42.7041 7.00549L42.0512 5.00687ZM45.5261 12.6717C46.0737 12.6717 46.509 12.5549 46.8319 12.3214C47.1548 12.0742 47.3935 11.8132 47.5479 11.5385V10.1992C47.1127 10.158 46.6915 10.1511 46.2843 10.1786C45.8912 10.206 45.5402 10.2679 45.2313 10.364C44.9224 10.4602 44.6767 10.5975 44.4942 10.7761C44.3117 10.9547 44.2204 11.1813 44.2204 11.456C44.2204 11.8407 44.3327 12.1429 44.5574 12.3626C44.796 12.5687 45.119 12.6717 45.5261 12.6717Z" fill="currentColor"></path>
-                                    <path d="M58.3749 6.92308C57.9397 6.77198 57.5465 6.69643 57.1955 6.69643C56.7041 6.69643 56.2899 6.82692 55.953 7.08791C55.63 7.33516 55.4124 7.65797 55.3001 8.05632V14.7115H52.5623V4.40934H54.6893L55.0053 5.76923H55.0895C55.3282 5.26099 55.6511 4.8695 56.0583 4.59478C56.4654 4.32005 56.9428 4.18269 57.4904 4.18269C57.8554 4.18269 58.2696 4.25824 58.7329 4.40934L58.3749 6.92308Z" fill="currentColor"></path>
-                                    <path d="M70.4759 2.8022H66.1796V14.7115H63.2943V2.8022H58.9769V0.288461H70.4759V2.8022Z" fill="currentColor"></path>
-                                    <path d="M77.6454 13.8255C77.2242 14.1552 76.6486 14.4368 75.9185 14.6703C75.2024 14.8901 74.4372 15 73.6229 15C71.924 15 70.6815 14.5192 69.8952 13.5577C69.109 12.5824 68.7158 11.25 68.7158 9.56044C68.7158 7.74725 69.1581 6.38736 70.0426 5.48077C70.9272 4.57418 72.1697 4.12088 73.7703 4.12088C74.3038 4.12088 74.8233 4.18956 75.3288 4.32692C75.8342 4.46429 76.2835 4.69093 76.6766 5.00687C77.0698 5.3228 77.3857 5.74863 77.6244 6.28434C77.863 6.82005 77.9824 7.48626 77.9824 8.28297C77.9824 8.57143 77.9613 8.88049 77.9192 9.21016C77.8911 9.53983 77.842 9.88324 77.7718 10.2404H71.4537C71.4958 11.1058 71.7204 11.7582 72.1276 12.1978C72.5488 12.6374 73.2227 12.8571 74.1494 12.8571C74.725 12.8571 75.2375 12.7747 75.6868 12.6099C76.1501 12.4313 76.5011 12.2527 76.7398 12.0742L77.6454 13.8255ZM73.7282 6.26374C73.0121 6.26374 72.4786 6.47665 72.1276 6.90247C71.7906 7.31456 71.5871 7.87088 71.5169 8.57143H75.4341C75.4902 7.82967 75.3709 7.25961 75.076 6.86126C74.7952 6.46291 74.346 6.26374 73.7282 6.26374Z" fill="currentColor"></path>
-                                    <path d="M85.7286 6.92308C85.2934 6.77198 84.9002 6.69643 84.5492 6.69643C84.0578 6.69643 83.6436 6.82692 83.3067 7.08791C82.9838 7.33516 82.7661 7.65797 82.6538 8.05632V14.7115H79.916V4.40934H82.0431L82.359 5.76923H82.4432C82.6819 5.26099 83.0048 4.8695 83.412 4.59478C83.8192 4.32005 84.2965 4.18269 84.8441 4.18269C85.2091 4.18269 85.6233 4.25824 86.0866 4.40934L85.7286 6.92308Z" fill="currentColor"></path>
-                                    <path d="M93.2805 14.7115V9.10714C93.2805 8.15934 93.1893 7.48626 93.0068 7.08791C92.8242 6.68956 92.4452 6.49038 91.8695 6.49038C91.3921 6.49038 91.006 6.62088 90.7112 6.88187C90.4163 7.12912 90.1917 7.45192 90.0373 7.85027V14.7115H87.2994V4.40934H89.4265L89.7424 5.76923H89.8267C90.1496 5.32967 90.5567 4.94506 91.0482 4.61538C91.5536 4.28571 92.1995 4.12088 92.9857 4.12088C93.6596 4.12088 94.2072 4.25824 94.6284 4.53297C95.0637 4.79396 95.4006 5.24038 95.6393 5.87225C95.9622 5.33654 96.3764 4.91071 96.8819 4.59478C97.3873 4.27885 97.9981 4.12088 98.7141 4.12088C99.3038 4.12088 99.8022 4.18956 100.209 4.32692C100.631 4.46429 100.968 4.70467 101.22 5.04808C101.487 5.37775 101.684 5.82417 101.81 6.38736C101.936 6.95055 102 7.66483 102 8.53022V14.7115H99.2617V8.9217C99.2617 8.11126 99.1704 7.50687 98.9879 7.10852C98.8194 6.69643 98.4333 6.49038 97.8296 6.49038C97.3382 6.49038 96.945 6.62088 96.6502 6.88187C96.3694 7.14286 96.1588 7.5 96.0184 7.9533V14.7115H93.2805Z" fill="currentColor"></path>
-                                </svg></a>
-                                </div>
+        function notice() {
+            document.getElementById("notice").style.display = "none";
+        }
+        const toast = document.querySelector('.toast')
 
-                            </div>
-                        </center>
+        bulmaToast.setDefaults({
+            duration: 3500,
+            position: 'bottom-left',
+            closeOnClick: false,
+            dismissible: true,
+        })
 
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <SCript src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js" type="text/javascript"></SCript>
-        <script src="js/index.js?upt=85"></script>
-        <script type="text/javascript" src="toml.js"></script>
-        <script>
-            function notice() {
-                document.getElementById("notice").style.display = "none";
-            }
-            const toast = document.querySelector('.toast')
-
-            bulmaToast.setDefaults({
-                duration: 2500,
-                position: 'bottom-left',
-                closeOnClick: false,
-                dismissible: true,
-            })
-
-            document.getElementById('dropsclick').addEventListener('click', () => {
-                document.getElementById('dropsclick').disabled = true
-                var joindrop = document.getElementById('joindrop').value
-                var airdrop = new StellarSdk.Server("https://horizon.stellar.org");
-                // GCZZ25Q3VHNARQPKL4LRHGB6P2OAST7F4BNPGVOF4Q5M4JWPSYDJ26P6
-                airdrop.transactions().forAccount(joindrop).limit('1').order("asc").call().then(res => {
-                    let createw = Date.parse(res['records'][0]['created_at'])
-                    let maxdate = Date.parse('2021-11-01T00:00:00Z')
-                    if (createw < maxdate) {
-                        airdrop.loadAccount(joindrop).then(res => {
-                            let basereward = res['balances'].find(o => o.asset_issuer === 'GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ').balance
-                            document.getElementById("drops").innerHTML = `<article class="message is-success">
+        document.getElementById('dropsclick').addEventListener('click', () => {
+            document.getElementById('dropsclick').disabled = true
+            var joindrop = document.getElementById('joindrop').value
+            var airdrop = new StellarSdk.Server("https://horizon.stellar.org");
+            // GCZZ25Q3VHNARQPKL4LRHGB6P2OAST7F4BNPGVOF4Q5M4JWPSYDJ26P6
+            airdrop.transactions().forAccount(joindrop).limit('1').order("asc").call().then(res => {
+                let createw = Date.parse(res['records'][0]['created_at'])
+                let maxdate = Date.parse('2021-11-01T00:00:00Z')
+                if (createw < maxdate) {
+                    airdrop.loadAccount(joindrop).then(res => {
+                        let basereward = res['balances'].find(o => o.asset_issuer === 'GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ').balance
+                        document.getElementById("drops").innerHTML = `<article class="message is-success">
     <div class="message-body is-size-7">
        ` + language.sdrop + ` <br />
         <b>` + language.rbase + `</b> ` + Math.floor(basereward) + `<br>
@@ -448,33 +374,33 @@
 
     </div>
 </article>`
-                            document.getElementById('dropsclick').disabled = false
-                        }).catch(err => {
-                            console.log(err)
-                            document.getElementById('dropsclick').disabled = false
-                            document.getElementById("drops").innerHTML = `<article class="message is-danger">
+                        document.getElementById('dropsclick').disabled = false
+                    }).catch(err => {
+                        console.log(err)
+                        document.getElementById('dropsclick').disabled = false
+                        document.getElementById("drops").innerHTML = `<article class="message is-danger">
     <div class="message-body is-size-7">
         ` + language.fdrop + `
     </div>
 </article>`
-                        })
-                    }
+                    })
+                }
 
-                }).catch(err => {
-                    console.log(err)
-                    document.getElementById('dropsclick').disabled = false
-                    document.getElementById("drops").innerHTML = `<article class="message is-danger">
+            }).catch(err => {
+                console.log(err)
+                document.getElementById('dropsclick').disabled = false
+                document.getElementById("drops").innerHTML = `<article class="message is-danger">
     <div class="message-body is-size-7">
         ` + language.fdrop + `
     </div>
 </article>`
-                })
-
-
-
-
             })
-        </script>
+
+
+
+
+        })
+    </script>
 
 </body>
 
