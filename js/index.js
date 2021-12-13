@@ -157,10 +157,6 @@ function IsEmpty() {
 
 
 
-
-
-
-
 //document.getElementsByTagName()
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,6 +198,9 @@ function slchain() {
     }
     alert(chain);
 }
+
+
+
 
 
 
@@ -297,8 +296,13 @@ let loginPage = `
      * 
      * @param {any} key 
      * @param {any} number 
+     * 
      */
-let loggedInPage = (key, number) => `
+
+
+let loggedInPage = (key, number) =>
+
+    `
     <section class="section" style="padding-top: 0;">
         <div class="column container box is-one-third">
         <div style="border-radius:7px;padding:1rem;background-image: linear-gradient(to right bottom, #177899, #008da9, #00a3b4, #00b8b9, #12cdba);">
@@ -397,19 +401,19 @@ let loggedInPage = (key, number) => `
             </center>
         </div>
     </section>  
-    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content "><h4 class="mb-5">${language.txconf}</h4><div class="is-info">
+    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content "><h4 class="mb-5 title is-5">${language.txconf}</h4><div class="is-info">
   
     <strong>${language.lasset} :</strong><br> <label id="assetnx"></label><br>
     <strong>${language.lrec} :</strong><br> <label id="assetrx"></label><br>
     <strong>${language.lamount} :</strong><br> <label id="assetax"></label><br>
     <strong>Memo :</strong><br> <label id="assetmx">-</label><br>
-    <strong>XDR :</strong><br<div class="control">
-    <textarea class="textarea" id="xdrarea" readonly>loading...</textarea>
+    <strong>XDR : <button id="xdrbuttondecode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);">Decode</button><button id="xdrbuttonencode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);display:none;">Encode</button></strong>  <br /><br /><div class="control">
+    <textarea class="textarea is-info" id="xdrarea" readonly>loading...</textarea>
   </div><br>
   </div>
   <div class="buttons">
-  <button class="button is-danger"  onclick="document.getElementById('confshow').classList.remove('is-active');">${language.cancel}</button>
-  <button id="payment-button" class="button is-success" onclick="document.getElementById('confshow').classList.remove('is-active');">${language.confirm}</button>
+  <button class="button is-danger is-rounded is-fullwidth"  onclick="document.getElementById('confshow').classList.remove('is-active');">${language.cancel}</button>
+  <button id="payment-button" class="button is-success is-rounded is-fullwidth" onclick="document.getElementById('confshow').classList.remove('is-active');">${language.confirm}</button>
 </div>
   </div> </div> </div> </div> </div> 
 
@@ -428,7 +432,9 @@ let loggedInPage = (key, number) => `
       <input class="input is-small is-danger is-rounded is-fullwidth" id="hiddenkeys" type="password" value="${encryptls('dcr', 'ok')}" readonly style="color:hsl(0, 0%, 21%);">
     </div>
   </div>
-
+  <center>
+  <a href="data:${"text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ 'hash_version': '1.0.1-beta', 'public': key.publicKey(), 'key2hash': 'MICRO' + utf8_to_b64(key.secret()).replace('=', 'XYZ'), 'provider': 'microlumens.com' }, undefined, 2))}
+  " download="microlummens-wallet.json" style="color:hsl(204, 86%, 53%);text-decoration:none;background:white;margin-top:-15px;border-radius:4px;padding:8px;text-align:center;"><i class="bi bi-arrow-down-square-fill"></i> Backup wallet</a></center>
   
     </div>
   </div>
@@ -574,6 +580,8 @@ let renderLoggedInPage = (secretSeed) => {
                 txmshow(keyPair)
             })
 
+
+
         }).then(log => {
             getBalance(keyPair.publicKey())
         }).catch(err => {
@@ -633,7 +641,7 @@ let login = (secure) => {
             document.getElementById("unlocking").style.display = "none";
             document.getElementById("newacc").style.display = "none";
             document.getElementById("formsignin").style.display = "none";
-            document.getElementById("titlexm").style.display = "none";
+            // document.getElementById("titlexm").style.display = "none";
         }
 
     }
@@ -885,6 +893,16 @@ let txmshow = (keyPair) => {
                     out: 'fadeOut'
                 },
             })
+
+        }
+        if (document.getElementById('inputmemo').value === "") {
+            bulmaToast.toast({
+                message: 'Memo Error!',
+                type: 'is-danger',
+                animate: { in: 'fadeIn',
+                    out: 'fadeOut'
+                },
+            })
         } else {
             document.getElementById("confshow").classList.add("is-active");
             let amount = document.getElementById('amount').value
@@ -905,7 +923,24 @@ let txmshow = (keyPair) => {
                         amount: amount
                     })).addMemo(stellar.Memo.text(memos))
                     .build()
-                document.getElementById("xdrarea").value = transaction.toEnvelope().toXDR('base64');
+                var xdrenvelope = transaction.toEnvelope().toXDR('base64');
+                var xdrunpack = JSON.stringify(StellarSdk.xdr.TransactionEnvelope.fromXDR(xdrenvelope, 'base64'), undefined, 2);
+                document.getElementById("xdrarea").value = xdrenvelope;
+                document.getElementById("xdrbuttonencode").style.display = "none";
+                document.getElementById("xdrbuttondecode").addEventListener("click", function() {
+                    document.getElementById("xdrarea").value = xdrunpack;
+                    document.getElementById("xdrbuttondecode").style.display = "none";
+                    document.getElementById("xdrbuttonencode").style.display = ""
+
+                });
+                document.getElementById("xdrbuttonencode").addEventListener("click", function() {
+                    document.getElementById("xdrarea").value = xdrenvelope;
+                    document.getElementById("xdrbuttonencode").style.display = "none";
+                    document.getElementById("xdrbuttondecode").style.display = "";
+
+                });
+
+
             }).catch(err => {
                 console.log(err);
             })
