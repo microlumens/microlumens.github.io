@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/**
+ * * Bulma Material Design Form Elements
+ * * İsmail Demirbilek
+ * * (c) 2016 - MIT
+ * * Based on https://s.codepen.io/jonnitto/pen/OVmvPB by Jon Uhlmann
+ * */
+
+.radio-control2,
+.control2 {
+    position: relative;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.form-inline2>.control2,
+.form-inline2>.btn2 {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.form-help2 {
+    margin-top: 0.125rem;
+    margin-left: 0.125rem;
+    color: #949494;
+    font-size: 0.8rem;
+}
+
+.checkbox-control2 .form-help2,
+.radio-control2 .form-help2,
+.control2 .form-help2 {
+    position: absolute;
+    width: 100%;
+}
+
+.checkbox-control2 .form-help2 {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.radio-control2 .form-help2 {
+    padding-top: 0.25rem;
+    margin-top: -1rem;
+}
+
+.control2 input {
+    height: 1.9rem;
+}
+
+.control2 textarea {
+    resize: none;
+}
+
+.control2 select {
+    width: 100%;
+    border-radius: 6px;
+    height: 38px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-style: inset;
+    border: 0.0625rem solid #E0E0E0;
+    background: none;
+    line-height: 1.6;
+    box-shadow: none;
+}
+
+.control2 .label2 {
+    position: absolute;
+    top: 0.4rem;
+    pointer-events: none;
+    padding-left: 0.6rem;
+    z-index: 1;
+    color: #949494;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: all 0.38s ease;
+}
+
+.span2 {
+    background-color: white;
+}
+
+.control2 .bar2 {
+    position: relative;
+    border-bottom: 0.0625rem solid #7a7a7a;
+    display: block;
+}
+
+.control2 .bar2::before {
+    content: "";
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: #00d1b2;
+    transition: left 0.38s ease, width 0.38s ease;
+    z-index: 2;
+}
+
+.locklabel {
+    font-size: 0.8rem;
+    color: #616161;
+    z-index: 1;
+}
+
+.control2 input:hover {
+    border-color: #00d1b2;
+}
+
+.control2 input,
+.control2 textarea {
+    display: block;
+    background: none;
+    border-radius: 6px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-style: inset;
+    border: 0.0625rem solid #E0E0E0;
+    line-height: 1.9;
+    width: 100%;
+    height: 38px;
+    color: transparent;
+    transition: all 0.38s ease;
+    box-shadow: none;
+}
+
+.control2 input[type=file] {
+    line-height: 1;
+}
+
+.control2 input[type=file]~.bar2 {
+    display: none;
+}
+
+.control2 select,
+.control2 input:focus,
+.control2 input:valid,
+.control2 input.form-file2,
+.control2 input.has-value2,
+.control2 textarea:focus,
+.control2 textarea:valid,
+.control2 textarea.form-file2,
+.control2 textarea.has-value2 {
+    color: #4a4a4a;
+}
+
+.control2 select~.label2,
+.control2 input:focus~.label2,
+.control2 input:valid~.label2,
+.control2 input.form-file2~.label2,
+.control2 input.has-value2~.label2,
+.control2 textarea:focus~.label2,
+.control2 textarea:valid~.label2,
+.control2 textarea.form-file2~.label2,
+.control2 textarea.has-value2~.label2 {
+    font-size: 0.8rem;
+    color: #616161;
+    top: -0.6rem;
+    left: 0;
+}
+
+.control2 select:focus,
+.control2 input:focus,
+.control2 textarea:focus {
+    outline: none;
+}
+
+.control2 select:focus~.label2,
+.control2 input:focus~.label2,
+.control2 textarea:focus~.label2 {
+    color: #00d1b2;
+}
+
+.control2 select:focus~.bar2::before,
+.control2 input:focus~.bar2::before,
+.control2 textarea:focus~.bar2::before {
+    width: 100%;
+    left: 0;
+}
+
+.checkbox-control2 label,
+.radio-control2 label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 2rem;
+    text-align: left;
+    color: #4a4a4a;
+    display: block;
+}
+
+.checkbox-control2 input,
+.radio-control2 input {
+    width: auto;
+    opacity: 1e-8;
+    position: absolute;
+    left: 0;
+}
+
+.radio-control2 {
+    margin-bottom: 1rem;
+}
+
+.radio-control2 .helper2 {
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    user-select: none;
+    color: #7a7a7a;
+}
+
+.radio-control2 .helper2::before,
+.radio-control2 .helper2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.38s ease;
+    border-radius: 50%;
+    border: 0.125rem solid currentColor;
+}
+
+.radio-control2 .helper2::after {
+    transform: scale(0);
+    background-color: #00d1b2;
+    border-color: #00d1b2;
+}
+
+.radio-control2 label:hover .helper2 {
+    color: #00d1b2;
+}
+
+.radio-control2 input:checked~.helper2::after {
+    transform: scale(0.5);
+}
+
+.radio-control2 input:checked~.helper2::before {
+    color: #00d1b2;
+}
+
+.checkbox-control2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-control2 .helper2 {
+    color: #7a7a7a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    z-index: 0;
+    border: 0.125rem solid currentColor;
+    border-radius: 0.0625rem;
+    transition: border-color 0.38s ease;
+}
+
+.checkbox-control2 .helper2::before,
+.checkbox-control2 .helper2::after {
+    position: absolute;
+    height: 0;
+    width: 0.2rem;
+    background-color: #00d1b2;
+    display: block;
+    transform-origin: left top;
+    border-radius: 0.25rem;
+    content: "";
+    transition: opacity 0.38s ease, height 0s linear 0.38s;
+    opacity: 0;
+}
+
+.checkbox-control2 .helper2::before {
+    top: 0.65rem;
+    left: 0.38rem;
+    transform: rotate(-135deg);
+}
+
+.checkbox-control2 .helper2::after {
+    top: 0.3rem;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.checkbox-control2 label:hover .helper2 {
+    color: #00d1b2;
+}
+
+.checkbox-control2 input:checked~.helper2 {
+    color: #00d1b2;
+}
+
+.checkbox-control2 input:checked~.helper2::after,
+.checkbox-control2 input:checked~.helper2::before {
+    opacity: 1;
+    transition: height 0.38s ease;
+}
+
+.checkbox-control2 input:checked~.helper2::after {
+    height: 0.5rem;
+}
+
+.checkbox-control2 input:checked~.helper2::before {
+    height: 1.2rem;
+    transition-delay: 0.38s;
+}
+
+.radio-control2+.radio-control2,
+.checkbox-control2+.checkbox-control2 {
+    margin-top: 1rem;
+}
+
+.has-error2 .legend2.legend2,
+.has-error2.control2 .label2.label2 {
+    color: #ff3860;
+}
+
+.has-error2.control2 .form-help2,
+.has-error2.control2 .helper2,
+.has-error2.checkbox-control2 .form-help2,
+.has-error2.checkbox-control2 .helper2,
+.has-error2.radio-control2 .form-help2,
+.has-error2.radio-control2 .helper2,
+.has-error2.radio-control2 .form-help2,
+.has-error2.radio-control2 .helper2 {
+    color: #ff3860;
+}
+
+.has-error2 .bar2::before {
+    background: #ff3860;
+    left: 0;
+    width: 100%;
+}

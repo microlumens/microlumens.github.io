@@ -121,9 +121,11 @@ function hidetxh() {
     var x = document.getElementById("historyt");
     if (x.style.display === "none") {
         x.style.display = "block";
+        document.getElementById("txformd").style.display = "none";
         document.getElementById("btnshwr").innerHTML = "<i class='bi bi-eye-slash-fill'></i>&nbsp; Hide History";
     } else {
         x.style.display = "none";
+        document.getElementById("txformd").style.display = "";
         document.getElementById("btnshwr").innerHTML = "<i class='bi bi-eye-fill'></i>&nbsp; Show History";
     }
 }
@@ -254,8 +256,8 @@ let loginPage = `
                 <div class="column ">
                     
            
-                <div id="jsonkey" class="file is-small is-boxed is-centered m-4" style="display:none;">
-                  <label class="file-label">
+                <div id="jsonkey" class="file is-small is-boxed is-centered has-name m-4 mb-5" style="display:none;background:transparent;">
+                  <label class="file-label" style="border-radius:8px;background:transparent;">
                     <input id="fileToLoad" onchange="hash2key()" class="file-input" type="file" name="resume">
                     <span class="file-cta">
                       <span class="file-icon">
@@ -304,8 +306,8 @@ let loggedInPage = (key, number) =>
 
     `
     <section class="section" style="padding-top: 0;">
-        <div class="column container box is-one-third">
-        <div style="border-radius:7px;padding:1rem;background-image: linear-gradient(to right bottom, #177899, #008da9, #00a3b4, #00b8b9, #12cdba);">
+        <div class="column container box is-one-third" id="txformd" style="border-radius:1rem;">
+        <div style="border-radius:18px;padding:1rem;background-image: linear-gradient(to right bottom, #177899, #008da9, #00a3b4, #00b8b9, #12cdba);">
         <h3 class="title" style="color:white;font-size:1.5rem;">
         ${language.lbalance}
             </h3>
@@ -322,51 +324,49 @@ let loggedInPage = (key, number) =>
            
             <!------ <button class="button is-light is-small mb-1 is-fullwidth" onclick="document.getElementById('trsshow').classList.add('is-active');"><i class="bi bi-boxes" style="color:hsl(217, 71%, 53%);"></i>&nbsp;Labs</button> ----->
             <button class="button is-dark is-small mb-1 is-fullwidth" onclick="document.getElementById('pkeys').classList.add('is-active');"><i class="bi bi-device-hdd-fill" style="color:hsl(204, 86%, 53%);"></i>&nbsp;Export Wallet</button>
+           <!-----  <button class="button is-dark is-small mb-1 is-fullwidth" onclick="document.getElementById('pkeys').classList.add('is-active');"><i class="bi bi-fingerprint" style="color:hsl(348, 100%, 61%);"></i>&nbsp;XDR Transaction Signer</button> ----->
             <button class="button is-dark is-small mb-1 is-fullwidth" onclick="window.open('https://stellarterm.com/exchange/XLM-native/MICRO-GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ');"><i class="bi bi-coin" style="color:hsl(48, 100%, 67%);"></i>&nbsp;Buy Micro</button>
             </div>
             </div>
             <br>
             <div class="column">
-                <h2 class="subtitle">
+                <h2 class="title is-5" style="padding: 0 15px; border-left:10px solid hsl(171, 100%, 41%);position:relative;transform:translateX(-1.5rem);">
                 ${language.lntransaction}
                 </h2>
                 <div class="columns" style="">
                     <div class="column is-full">
-                    <div class="field">
-                    <label class="label">${language.lasset}</label>
-                    <div class="control">
-  <div class="select is-primary" >
-    <select style="" id="ascd">
-    <option disabled>ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>
-    <option id="myassets" style="display:none;">MICRO</option>
-      
-    </select>
-  </div>
-</div>
-</div>
-                        <div class="field">
-                            <label class="label">${language.lrec}</label>
-                            <div class="control">
-                                <input id="destination" class="input is-primary is-fullwidth" type="text" placeholder="GBZNF2TXVCF4OXAWBR7WYMNVRI5INI7SGMJHEHRAVMJQG3MU5ZXQHI45" required>
+                       
+                        <div class="is-flex" style="margin-top:-20px">
+                            <div class="control2 mr-2">
+                                <div class="select2 is-primary" style="width:100px;">
+                                    <select style="" id="ascd">
+                                    <!----- <option disabled>ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</option>------>
+                                    <option id="myassets" style="display:none;">Choose...</option>
+                                    
+                                    </select>
+                                    <label class="label2"><span class="span2">${language.lasset}</span></label>
+                                </div>
+                            </div>
+                            <div class="control2 is-fullwidth" style="width:100%;">
+                                <input id="amount" class="input2 is-primary" type="number" min="0" max="99999999999999999999999999999999999" autocorrect="off" autocomplete="off" placeholder="0.0000" step="any" required />
+                                <label class="locklabel" style="position: relative;top: -3.2rem;left:0.6rem;font-size: 0.8rem;background:transparent;"><span class="span2">${language.lamount}</span></label>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">${language.lamount}</label>
-                            <div class="control">
-                                <input id="amount" class="input is-primary is-fullwidth" type="number" placeholder="0.0000" required>
-                                </div>
-                        </div>     
-                        <div class="field">
-                        <label class="label">Memo</label>
-                        <div class="control">
-                            <input id="inputmemo" class="input is-primary is-fullwidth" type="text" placeholder="${language.dem}" required>
+
+                        <div class="field" style="margin-top:-80px">
+                            <div class="control2">
+                                <input id="destination" class="input2 is-primary is-fullwidth" type="text" autocorrect="off" autocomplete="off" required />
+                                <label class="label2"><span class="span2">${language.lrec}</span></label> 
                             </div>
-                    </div>      
-                                      
-                        <div class="field">
+            
+                            <div class="control2 has-icon2 has-icon-right2" style="margin-top:-20px">
+                                <input id="inputmemo" class="input2 is-primary is-fullwidth" type="text" autocorrect="off" autocomplete="off" required />
+                                <label class="label2"><span class="span2">Memo</span></label>
+                            </div>
+                        </div>             
+                        <div class="field mt-5">
                             <div class="control">
-                                <button class="button is-primary is-fullwidth mb-2" id="txmshow"><i class="bi bi-pencil-square"></i>&nbsp;${language.lsend}</button>
-                                <button class="button is-dark  is-fullwidth mb-2" onclick="hidetxh()" id="btnshwr"><i class="bi bi-eye-fill"></i>&nbsp;Show History</button>
+                                <button class="button is-primary is-fullwidth mb-2 is-rounded" id="txmshow"><i class="bi bi-pencil-square"></i>&nbsp;${language.lsend}</button>
                             </div>
                         </div>
 
@@ -379,10 +379,11 @@ let loggedInPage = (key, number) =>
                 </div> 
             </div>          
         </div>
-        <div class="column container box is-one-third is-centered mb-5" id="historyt" style="display:none;">
-            <h4 class="title mt-3 is-4">
+
+        <div class="column container box is-one-third is-centered mb-5 p-4" id="historyt" style="display:none;border-radius:1rem;">
+            <h2 class="title mt-3 is-5" style="padding: 0 10px; border-left:10px solid hsl(171, 100%, 41%);position:relative;transform:translateX(-1rem);">
             ${language.lhistory}
-            </h4>
+            </h2>
             
 
             <table class="table">
@@ -400,20 +401,27 @@ let loggedInPage = (key, number) =>
             <a class="button is-danger is-light is-small is-rounded" href="${isExplorer}account/${key.publicKey()}" target="_blank">${language.mexp}</a>
             </center>
         </div>
+        <div class="column">
+        <div class="field">
+            <div class="buttons has-addons is-centered">
+                <button class="button is-white mb-2 is-rounded is-small" onclick="hidetxh()" id="btnshwr"><i class="bi bi-eye-fill"></i>&nbsp;Show History</button>
+            </div>
+        </div>
+    </div>
     </section>  
-    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content "><h4 class="mb-5 title is-5">${language.txconf}</h4><div class="is-info">
+    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content "><h3 class="title mb-5 title is-6" style="padding: 0 10px; border-left:10px solid hsl(217, 71%, 53%);position:relative;transform:translateX(-1.5rem);">${language.txconf}</h3><div class="is-info">
   
-    <strong>${language.lasset} :</strong><br> <label id="assetnx"></label><br>
-    <strong>${language.lrec} :</strong><br> <label id="assetrx"></label><br>
-    <strong>${language.lamount} :</strong><br> <label id="assetax"></label><br>
-    <strong>Memo :</strong><br> <label id="assetmx">-</label><br>
-    <strong>XDR : <button id="xdrbuttondecode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);">Decode</button><button id="xdrbuttonencode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);display:none;">Encode</button></strong>  <br /><br /><div class="control">
-    <textarea class="textarea is-info" id="xdrarea" readonly>loading...</textarea>
+    <strong style="font-size:0.9rem">${language.lasset} :</strong><br> <label id="assetnx"></label><br>
+    <strong style="font-size:0.9rem">${language.lrec} :</strong><br> <label id="assetrx"></label><br>
+    <strong style="font-size:0.9rem">${language.lamount} :</strong><br> <label id="assetax"></label><br>
+    <strong style="font-size:0.9rem">Memo :</strong><br> <label id="assetmx">-</label><br>
+    <strong style="font-size:0.9rem">XDR : <button id="xdrbuttondecode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);">Decode</button><button id="xdrbuttonencode" class="button is-small is-info is-rounded" style="transform: translateY(-3px);display:none;">Encode</button></strong>  <br /><br /><div class="control">
+    <textarea class="textarea is-info" id="xdrarea" style="font-size:0.8rem" readonly>loading...</textarea>
   </div><br>
   </div>
   <div class="buttons">
-  <button class="button is-danger is-rounded is-fullwidth"  onclick="document.getElementById('confshow').classList.remove('is-active');">${language.cancel}</button>
-  <button id="payment-button" class="button is-success is-rounded is-fullwidth" onclick="document.getElementById('confshow').classList.remove('is-active');">${language.confirm}</button>
+  <button class="button is-danger is-rounded is-fullwidth is-outlined"  onclick="document.getElementById('confshow').classList.remove('is-active');"><i class="bi bi-x-square-fill"></i>&nbsp;${language.cancel}</button>
+  <button id="payment-button" class="button is-info is-rounded is-fullwidth" onclick="document.getElementById('confshow').classList.remove('is-active');"><i class="bi bi-check-square-fill"></i>&nbsp;${language.confirm}</button>
 </div>
   </div> </div> </div> </div> </div> 
 
@@ -445,21 +453,21 @@ let loggedInPage = (key, number) =>
 </div>
 
 
-  <div id="trsshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6"> <div class="card-content"> <div class="content "><button class="modal-close is-large" aria-label="close" onclick="document.getElementById('trsshow').classList.remove('is-active');"></button><h4 class="mb-5">${language.ttrustline}</h4>
+  <div id="trsshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem;"> <div class="card-content"> <div class="content "><button class="modal-close is-large" aria-label="close" onclick="document.getElementById('trsshow').classList.remove('is-active');"></button><h4 class="mb-5 title is-6">${language.ttrustline}</h4>
   <div class="field">
   <p class="control">
-    <input id="tassetIssuerAddress" class="input is-primary" type="text" placeholder="Issuer Address" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
+    <input id="tassetIssuerAddress" class="input is-primary is-rounded is-fullwidth" type="text" placeholder="Issuer Address" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
   </p>
 </div>
 <div class="field">
   <p class="control">
-    <input id="tassetCode" class="input is-primary" type="text" placeholder="Symbol" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
+    <input id="tassetCode" class="input is-primary is-rounded is-fullwidth" type="text" placeholder="Symbol" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
   </p>
 </div>
 <div class="field">
   <p class="control">
-    <button class="button is-success" id="addtrustline">
-    ${language.tadd}
+    <button class="button is-success is-rounded is-fullwidth" id="addtrustline">
+    <i class="bi bi-shield-fill-plus"></i>&nbsp; ${language.tadd}
     </button>
   </p>
 </div>
@@ -869,6 +877,8 @@ let sendXLM = (keyPair) => {
 }
 
 let txmshow = (keyPair) => {
+    document.getElementById("xdrbuttondecode").style.display = "";
+    document.getElementById("xdrbuttonencode").style.display = "none"
     let transaction
     document.getElementById('payment-error').innerText = "";
     let assetid = document.getElementById('ascd').value
