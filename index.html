@@ -373,9 +373,9 @@
     <script src="js/index.js?upt=1032"></script>
     <script type="text/javascript" src="toml.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById("loaders").style.display = "none";
-        }, false);
+        setTimeout(function() {
+            document.getElementById("loaders").classList.remove("is-active");
+        }, 4000);
 
 
 
