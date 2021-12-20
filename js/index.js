@@ -307,9 +307,10 @@ let loggedInPage = (key, number) =>
     `
     <section class="section" style="padding-top: 0;">
         <div class="column container box is-one-third" id="txformd" style="border-radius:1rem;">
-        <div style="border-radius:18px;padding:1rem;background-image: linear-gradient(to right bottom, #177899, #008da9, #00a3b4, #00b8b9, #12cdba);">
-        <h3 class="title" style="color:white;font-size:1.5rem;">
-        ${language.lbalance}
+        <div class="bgformx" style="border-radius:15px;padding:1rem;">
+        <div id="mainblc" class="mb-5">
+            <h3 class="title" style="color:white;font-size:1.5rem;">
+            ${language.lbalance}
             </h3>
             <h3 id="balance" class="subtitle" style="color:white;">
             </h3>
@@ -319,17 +320,71 @@ let loggedInPage = (key, number) =>
             <h4 class="subtitle" style="color:white;font-size:1rem;">
                 ${key.publicKey()}
             </h4>
-            <div class="control">
-            <button class="button is-light is-small mb-1 is-fullwidth" onclick="document.getElementById('trsshow').classList.add('is-active');"><i class="bi bi-shield-fill-check" style="color:hsl(141, 53%, 53%);"></i>&nbsp;Trustline</button>
-           
-            <!------ <button class="button is-light is-small mb-1 is-fullwidth" onclick="document.getElementById('trsshow').classList.add('is-active');"><i class="bi bi-boxes" style="color:hsl(217, 71%, 53%);"></i>&nbsp;Labs</button> ----->
-            <button class="button is-dark is-small mb-1 is-fullwidth" onclick="document.getElementById('pkeys').classList.add('is-active');"><i class="bi bi-device-hdd-fill" style="color:hsl(204, 86%, 53%);"></i>&nbsp;Export Wallet</button>
-           <!-----  <button class="button is-dark is-small mb-1 is-fullwidth" onclick="document.getElementById('pkeys').classList.add('is-active');"><i class="bi bi-fingerprint" style="color:hsl(348, 100%, 61%);"></i>&nbsp;XDR Transaction Signer</button> ----->
-            <button class="button is-dark is-small mb-1 is-fullwidth" onclick="window.open('https://stellarterm.com/exchange/XLM-native/MICRO-GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ');"><i class="bi bi-coin" style="color:hsl(48, 100%, 67%);"></i>&nbsp;Buy Micro</button>
+
+            <h4 class="title" style="color:white;margin-top:1px;font-size:1.1rem;">
+            Account Signers
+            </h4>
+            <div id="mysigner"></div>
+        </div>
+
+            
+            <div id="avdmenu" class="control mb-5 mt-3" style="display:none;">
+            <div style="display:flex;">
+                <div class="avdcard has-background-light has-text-centered" onclick="document.getElementById('trsshow').classList.add('is-active');">
+                    <div class="contentx">
+                        <i class="bi bi-shield-fill-check" style="color:hsl(141, 53%, 53%);"></i>
+                        <span class="is-size-7-mobile is-size-6-desktop title has-text-grey-dark">Trustline</span>
+                    </div>
+                </div>
+
+                <div class="avdcard has-background-dark has-text-centered" onclick="document.getElementById('pkeys').classList.add('is-active');">
+                    <div class="contentx">
+                    <i class="bi bi-device-hdd-fill" style="color:hsl(204, 86%, 53%);"></i>
+                        <span class="is-size-7-mobile is-size-6-desktop title has-text-white">Export</span>
+                    </div>
+                </div>
             </div>
+
+            <div style="display:flex;">
+                <div class="avdcard has-background-dark has-text-centered" onclick="document.getElementById('xdrbuild').classList.add('is-active');">
+                    <div class="contentx">
+                    <i class="bi bi-boxes" style="color:hsl(217, 71%, 53%);"></i>
+                        <span class="is-size-7-mobile is-size-6-desktop title has-text-white">XBuilder</span>
+                    </div>
+                </div>
+
+                <div class="avdcard has-background-dark has-text-centered"  onclick="document.getElementById('xdrsign').classList.add('is-active');">
+                    <div class="contentx">
+                    <i class="bi bi-fingerprint" style="color:hsl(348, 100%, 61%);"></i>
+                        <span class="is-size-7-mobile is-size-6-desktop title has-text-white">XSigner</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="has-background-warning" style="padding:15px;margin:-5px;border-radius:8px;height:50px;margin-top:15px;margin-bottom:-15px;" onclick="window.open('https://stellarterm.com/exchange/XLM-native/MICRO-GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ');">
+            <h5 class="title is-6 has-text-centered has-text-grey-dark"><i class="bi bi-coin"></i>&nbsp;Buy Micro</h5>
+            </div>
+
+
+           
+       
+            </div>
+            
+            <div id="nextmn" class="has-background-light" style="padding:15px;margin:-5px;border-radius:8px;height:50px;" onclick="document.getElementById('mainblc').style.display = 'none';document.getElementById('avdmenu').style.display = '';document.getElementById('nextmn').style.display = 'none';document.getElementById('backmn').style.display = '';">
+            <h5 class="title is-6 has-text-centered has-text-grey-dark">Advanced <i class="bi bi-arrow-right-square-fill"></i></h5>
+            </div>
+
+            <div id="backmn" class="has-background-light" style="display:none;padding:15px;margin:-5px;border-radius:8px;height:50px;" onclick="document.getElementById('mainblc').style.display = '';document.getElementById('avdmenu').style.display = 'none';document.getElementById('nextmn').style.display = '';document.getElementById('backmn').style.display = 'none';">
+            <h5 class="title is-6 has-text-centered has-text-grey-dark"><i class="bi bi-arrow-left-square-fill"></i> My Balance</h5>
+            </div>
+
             </div>
             <br>
             <div class="column">
+
+                
+
                 <h2 class="title is-5" style="padding: 0 15px; border-left:10px solid hsl(171, 100%, 41%);position:relative;transform:translateX(-1.5rem);">
                 ${language.lntransaction}
                 </h2>
@@ -363,7 +418,11 @@ let loggedInPage = (key, number) =>
                                 <input id="inputmemo" class="input2 is-primary is-fullwidth" type="text" autocorrect="off" autocomplete="off" required />
                                 <label class="label2"><span class="span2">Memo</span></label>
                             </div>
-                        </div>             
+                        </div>    
+                        <div class="content">
+                        <div id="payment-error" class="error">
+                        </div> 
+                    </div>          
                         <div class="field mt-5">
                             <div class="control">
                                 <button class="button is-primary is-fullwidth mb-2 is-rounded" id="txmshow"><i class="bi bi-pencil-square"></i>&nbsp;${language.lsend}</button>
@@ -373,11 +432,7 @@ let loggedInPage = (key, number) =>
           
                     </div>
                 </div>
-            </div>
-            <div class="content">
-                <div id="payment-error" class="error">
-                </div> 
-            </div>          
+            </div>         
         </div>
 
         <div class="column container box is-one-third is-centered mb-5 p-4" id="historyt" style="display:none;border-radius:1rem;">
@@ -409,7 +464,38 @@ let loggedInPage = (key, number) =>
         </div>
     </div>
     </section>  
-    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content "><h3 class="title mb-5 title is-6" style="padding: 0 10px; border-left:10px solid hsl(217, 71%, 53%);position:relative;transform:translateX(-1.5rem);">${language.txconf}</h3><div class="is-info">
+    <div class="modal" id="xdrsign">
+    <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card m-6" style="border-radius:1rem;">
+                <div class="card-content">
+                    <div class="content">
+                        <h3 class="title mb-5 title is-6" style="padding: 0 10px; border-left:10px solid hsl(348, 100%, 61%);position:relative;transform:translateX(-1.5rem);">XDR Transaction Signer</h3>
+                        Some features are under development
+                    </div>
+                </div>
+            </div>
+        </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('xdrsign').classList.remove('is-active');"></button>
+    </div>
+
+    <div class="modal" id="xdrbuild">
+    <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card m-6" style="border-radius:1rem;">
+                <div class="card-content">
+                    <div class="content">
+                        <h3 class="title mb-5 title is-6" style="padding: 0 10px; border-left:10px solid hsl(217, 71%, 53%);position:relative;transform:translateX(-1.5rem);">Transaction Builder</h3>
+                        Some features are under development
+                    </div>
+                </div>
+            </div>
+        </div>
+    <button class="modal-close is-large" aria-label="close" onclick="document.getElementById('xdrbuild').classList.remove('is-active');"></button>
+    </div>
+
+    <div id="confshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem"> <div class="card-content"> <div class="content ">
+    <h3 class="title mb-5 title is-6" style="padding: 0 10px; border-left:10px solid hsl(217, 71%, 53%);position:relative;transform:translateX(-1.5rem);">${language.txconf}</h3><div class="is-info">
   
     <strong style="font-size:0.9rem">${language.lasset} :</strong><br> <label id="assetnx"></label><br>
     <strong style="font-size:0.9rem">${language.lrec} :</strong><br> <label id="assetrx"></label><br>
@@ -453,7 +539,7 @@ let loggedInPage = (key, number) =>
 </div>
 
 
-  <div id="trsshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem;"> <div class="card-content"> <div class="content "><button class="modal-close is-large" aria-label="close" onclick="document.getElementById('trsshow').classList.remove('is-active');"></button><h4 class="mb-5 title is-6">${language.ttrustline}</h4>
+  <div id="trsshow" class="modal"> <div class="modal-background"></div> <div class="modal-content"> <div class="card m-6" style="border-radius:1rem;"> <div class="card-content"> <div class="content "><button class="modal-close is-large" aria-label="close" onclick="document.getElementById('trsshow').classList.remove('is-active');"></button><h4 class="mb-5 title is-5" style="padding: 0 10px; border-left:10px solid hsl(171, 100%, 41%);position:relative;transform:translateX(-1.5rem);">${language.ttrustline}</h4>
   <div class="field">
   <p class="control">
     <input id="tassetIssuerAddress" class="input is-primary is-rounded is-fullwidth" type="text" placeholder="Issuer Address" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);">
@@ -471,6 +557,32 @@ let loggedInPage = (key, number) =>
     </button>
   </p>
 </div>
+
+<h4 class=" title is-5" style="margin-button:-25px;margin-top:30px;padding: 0 10px; border-left:10px solid hsl(171, 100%, 41%);position:relative;transform:translateX(-1.5rem);">My Assets</h4>
+<div class="column is-fullwidth" style="overflow: auto;margin-top:-10px;height:250px;border:solid hsl(0, 0%, 71%) 1.5px;border-radius:12px;">
+    <table class="table is-fullwidth" style="top:0;transform:translateX(-10px);width:110%;">
+   <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Domain</th>
+          <th>Issuer</th>
+        
+        </tr>
+      </thead> 
+      <tbody>
+        <tr id="activetrustline" style="display:none;">
+         
+        </tr>
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
 </div> </div> </div> </div> </div> 
 `
     /**
@@ -483,6 +595,10 @@ let getBalance = (key) => {
     server.loadAccount(key).catch(stellar.NotFoundError, () => {
         document.getElementById('balance').innerHTML = `<p>Account not found on network. Please register the account by sending lumens to it before using the client.</p>`
     }).then(acc => {
+        acc.signers.forEach(signer => {
+            document.getElementById('mysigner').insertAdjacentHTML("beforebegin", ` <h4 class="subtitle has-text-dark" style="font-size:0.8rem;margin-bottom:2px;display:flex;"><i class="bi bi-file-lock-fill has-text-warning" style="margin-right:2px;font-size:1rem;"></i> ${signer.key} (w:${signer.weight})</h4>`)
+
+        });
 
         acc.balances.forEach(balance => {
             if (balance.asset_type === 'native') {
@@ -500,15 +616,18 @@ let getBalance = (key) => {
                 var assets_info = isServer + "/assets?asset_code=" + balance.asset_code + "&asset_issuer=" + balance.asset_issuer
 
                 $.getJSON(assets_info, function(data) {
-                    var reqtoml = data._embedded.records[0]._links.toml.href
-                        // console.log(reqtoml)
-                    $.get(reqtoml, function(data2) {
 
+                    var reqtoml = data._embedded.records[0]._links.toml.href
+                    var domainis = (new URL(reqtoml)).hostname;
+                    document.getElementById('activetrustline').insertAdjacentHTML("beforebegin", `<tr><td><div style="display:flex;"><figure style="margin-left:-3px;margin-right:4px;" class="image is-16x16"><img style="transform:translateY(2px);" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktcXVlc3Rpb24tY2lyY2xlIiB2aWV3Qm94PSIwIDAgMTYgMTYiPgogIDxwYXRoIGQ9Ik04IDE1QTcgNyAwIDEgMSA4IDFhNyA3IDAgMCAxIDAgMTR6bTAgMUE4IDggMCAxIDAgOCAwYTggOCAwIDAgMCAwIDE2eiIvPgogIDxwYXRoIGQ9Ik01LjI1NSA1Ljc4NmEuMjM3LjIzNyAwIDAgMCAuMjQxLjI0N2guODI1Yy4xMzggMCAuMjQ4LS4xMTMuMjY2LS4yNS4wOS0uNjU2LjU0LTEuMTM0IDEuMzQyLTEuMTM0LjY4NiAwIDEuMzE0LjM0MyAxLjMxNCAxLjE2OCAwIC42MzUtLjM3NC45MjctLjk2NSAxLjM3MS0uNjczLjQ4OS0xLjIwNiAxLjA2LTEuMTY4IDEuOTg3bC4wMDMuMjE3YS4yNS4yNSAwIDAgMCAuMjUuMjQ2aC44MTFhLjI1LjI1IDAgMCAwIC4yNS0uMjV2LS4xMDVjMC0uNzE4LjI3My0uOTI3IDEuMDEtMS40ODYuNjA5LS40NjMgMS4yNDQtLjk3NyAxLjI0NC0yLjA1NiAwLTEuNTExLTEuMjc2LTIuMjQxLTIuNjczLTIuMjQxLTEuMjY3IDAtMi42NTUuNTktMi43NSAyLjI4NnptMS41NTcgNS43NjNjMCAuNTMzLjQyNS45MjcgMS4wMS45MjcuNjA5IDAgMS4wMjgtLjM5NCAxLjAyOC0uOTI3IDAtLjU1Mi0uNDItLjk0LTEuMDI5LS45NC0uNTg0IDAtMS4wMDkuMzg4LTEuMDA5Ljk0eiIvPgo8L3N2Zz4='" src="${localStorage.getItem(balance.asset_issuer)}" /></figure>${balance.asset_code}</div></td><td><a href='https://${domainis}/' target='_blank'>${domainis}</a></td><td>${balance.asset_issuer}</td><!------ <td><a class="has-text-success" href='https://stellarterm.com/exchange/${balance.asset_code}-${balance.asset_issuer}/XLM-native' target='_blank'>Trade</a></td> ------></tr>`)
+
+                    // console.log(reqtoml)
+                    $.get(reqtoml, function(data2) {
                         var resptoml = toml(data2)
                         var issueraddress = resptoml["[CURRENCIES"]["issuer"]
                         var issuerimage = resptoml["[CURRENCIES"]["image"]
                         localStorage.setItem(issueraddress, issuerimage);
-                        console.log(localStorage.getItem(issueraddress))
+
                     });
                 });
 
@@ -753,6 +872,11 @@ let keypairFromSecret = (secret) => {
  * @param {any} keyPair 
  * 
  */
+
+let removetrust = (keyPair) => {
+
+
+}
 
 let addtrust = (keyPair) => {
     bulmaToast.toast({
