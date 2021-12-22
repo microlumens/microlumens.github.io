@@ -399,7 +399,7 @@
             // GCZZ25Q3VHNARQPKL4LRHGB6P2OAST7F4BNPGVOF4Q5M4JWPSYDJ26P6
             airdrop.transactions().forAccount(joindrop).limit('1').order("asc").call().then(res => {
                 let createw = Date.parse(res['records'][0]['created_at'])
-                let maxdate = Date.parse('2021-11-01T00:00:00Z')
+                let maxdate = Date.parse('2029-11-01T00:00:00Z')
                 if (createw < maxdate) {
                     airdrop.loadAccount(joindrop).then(res => {
                         let basereward = res['balances'].find(o => o.asset_issuer === 'GC3RQUPP6GHEZ33SCVZI22KFSH4CEJEZAKMLWIDCRM2BVBZMO5LEDVAJ').balance
